@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class vida_scr : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	public float vida=100;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	public void Update(){
+		if (vida <=0){
+			if(gameObject.CompareTag("Player")){
+				Debug.Log("Game over");
+			}else if(gameObject.CompareTag("Bot")){
+				Destroy(gameObject);
+			}
+		}
+	}
 }
