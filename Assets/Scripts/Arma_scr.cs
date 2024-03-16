@@ -8,11 +8,21 @@ public class Arma_scr : MonoBehaviour
 	public GameObject canion;
 	public float velocidad_bala;
 	public float dmg;
-	
+	public bool es_jugador;
+	public float tiempo_disparo=2f;
+	public float tiempo_espera;
 
 	private void Update(){
-		if(Input.GetMouseButtonDown(0)){
-			GenerarBala();
+		if (es_jugador){
+			if(Input.GetButtonDown("Fire1")){
+				GenerarBala();
+			}
+		}else{
+			tiempo_espera-=Time.deltaTime;
+			if(tiempo_espera<1){
+				GenerarBala();
+				tiempo_espera=tiempo_disparo;
+			}
 		}
 
 	}
