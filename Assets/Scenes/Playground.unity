@@ -607,6 +607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agente: {fileID: 919633129}
   player: {fileID: 1881069711}
+  speed: 150
 --- !u!195 &919633129
 NavMeshAgent:
   m_ObjectHideFlags: 0
